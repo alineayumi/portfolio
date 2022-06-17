@@ -1,10 +1,10 @@
 import React  from 'react';
 import { Outlet } from "react-router-dom";
 
-export default function Layout() {
+export default function Footer() {
   return (
-    <div className="mx-auto pt-[60px]">
-      <Outlet />
+    <div>
+      footer
     </div>
   );
 }

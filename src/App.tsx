@@ -6,10 +6,11 @@ import About from "./pages/about/about";
 import Contact from "./pages/contact/contact";
 import Work from "./pages/work/work";
 import Error from "./pages/error/error";
+import Footer from "components/footer";
 
 export default function App() {
   return (
-    <div className="w-screen h-screen ">
+    <div className="w-screen h-screen">
       <Nav />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
