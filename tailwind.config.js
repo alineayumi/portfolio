@@ -8,6 +8,10 @@ module.exports = {
         'green': '#6d8654',
         'black': '#131411',
         'white': '#edeced',
+      },
+      padding: {
+        'hor': '32px',
+        'hor-sm': '36px'
       }
     }
   },

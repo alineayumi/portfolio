@@ -1,66 +1,21 @@
-# React Tailwindcss Boilerplate build with Vite
+# Portfolio
 
-This is a [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev) boilerplate to be used with [Tailwindcss](https://tailwindcss.com).
+A portfolio app using:
+* React
+* tailwindcss for stylying
+* react-router for routing
+* [React Tailwindcss Boilerplate build with Vite](https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate)
 
-## What is inside?
+The website is being continuous deployed through netlify.
+You can access it at this [url](https://jazzy-dango-5be892.netlify.app/).
 
-This project uses many tools like:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- [ReactJS](https://reactjs.org)
-- [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+## Available Scripts
 
-## Getting Started
+In the project directory, you can run:
 
-### Install
+### `npm run dev`
 
-Create the project.
-
-```bash
-npx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
-```
-
-Access the project directory.
-
-```bash
-cd my-app
-```
-
-Install dependencies.
-
-```bash
-npm install
-```
-
-Serve with hot reload at http://localhost:3000.
-
-```bash
-npm run dev
-```
-
-### Lint
-
-```bash
-npm run lint
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Test
-
-```bash
-npm run test
-```
-
-## License
-
-This project is licensed under the MIT License.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
