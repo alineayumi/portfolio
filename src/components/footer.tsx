@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-green-800">
-      <div className="py-6 px-4 bg-green md:flex md:items-center md:justify-between">
+    <footer className="bg-green-800 h-[100px] md:h-[60px] w-full">
+      <div className="py-3 px-4 bg-green md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-300 sm:text-center">
           © 2022 Aline Ayumi. All Rights Reserved.
         </span>
