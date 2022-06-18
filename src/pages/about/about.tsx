@@ -7,8 +7,8 @@ const whiteTextStyle =
 
 export default function About() {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-5 bg-green p-hor sm:p-hor-sm">
-      <div className="flex flex-col md:col-span-2 justify-start">
+    <div className="flex flex-col md:grid md:grid-cols-9 bg-green p-hor sm:p-hor-sm">
+      <div className="flex flex-col md:col-span-4 justify-start">
         <div className='mr-10'>
           <h1 className={whiteTextStyle}>Hi, my name</h1>
           <h1 className={whiteTextStyle}>
@@ -26,7 +26,7 @@ export default function About() {
           <p className='whitespace-nowrap'>GET TO KNOW ME</p>
         </button>
       </div>
-      <div className="flex flex-col col-span-3 w-full justify-end md:aspect-square">
+      <div className="flex flex-col col-span-5 w-full justify-end md:aspect-square">
         <img className="rounded-xl" src={aline} />
       </div>
     </div>
