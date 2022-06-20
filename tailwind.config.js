@@ -12,7 +12,7 @@ module.exports = {
       padding: {
         'hor': '32px',
         'hor-sm': '36px'
-      }
+      },
     }
   },
   plugins: []
