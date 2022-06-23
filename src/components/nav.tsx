@@ -28,7 +28,7 @@ export default function Nav() {
   useOutsideAlerter(dropdownRef)
 
   return (
-    <nav className="flex flex-row fixed w-full top-0 justify-between items-center px-3 sm:px-4 py-2.5 bg-green h-[60px]">
+    <nav className="z-10 flex flex-row fixed w-full top-0 justify-between items-center px-3 sm:px-4 py-2.5 bg-green h-[60px]">
       <NavLink to="/" className="flex items-center">
         <p className="font-mono font-bold ">Aline Ayumi</p>
       </NavLink>
