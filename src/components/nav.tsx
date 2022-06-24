@@ -79,13 +79,13 @@ export default function Nav() {
             <li>about</li>
           </NavLink>
           <NavLink
-            to="work"
+            to="portfolio"
             onClick={() => setMenu(false)}
             className={({ isActive }) =>
               isActive ? selectedDropdown : unselectedDropdown
             }
           >
-            <li>work</li>
+            <li>portfolio</li>
           </NavLink>
           <NavLink
             to="contact"
@@ -113,12 +113,12 @@ export default function Nav() {
           </li>
           <li>
             <NavLink
-              to="work"
+              to="portfolio"
               className={({ isActive }) =>
                 isActive ? selectedNavLinkStyle : unselectedNavLinkStyle
               }
             >
-              work
+              portfolio
             </NavLink>
           </li>
           <li>
