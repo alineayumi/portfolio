@@ -28,13 +28,13 @@ export default function Nav() {
   useOutsideAlerter(dropdownRef)
 
   return (
-    <nav className="z-10 flex flex-row fixed w-full top-0 justify-between items-center px-3 sm:px-4 py-2.5 bg-green h-[60px]">
+    <nav className="z-10 flex flex-row fixed w-full top-0 justify-between items-center px-3 sm:px-4 py-2.5 bg-primary h-[60px]">
       <NavLink to="/" className="flex items-center">
         <p className="font-mono font-bold ">Aline Ayumi</p>
       </NavLink>
       <button
         onClick={() => setMenu(!showMenu)}
-        className="md:hidden text-white bg-green-100 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+        className="md:hidden text-white bg-primary-100 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
       >
         <svg
           className="w-6 h-6"
@@ -65,7 +65,7 @@ export default function Nav() {
         ref={dropdownRef}
         className={`absolute z-10 top-[70px] right-[10px] ${
           showMenu ? 'block' : 'hidden'
-        } rounded shadow w-44 bg-green`}
+        } rounded shadow w-44 bg-primary`}
       >
         <ul className="flex flex-col items-start my-4 space-y-4 px-2">
           <NavLink

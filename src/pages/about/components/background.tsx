@@ -1,4 +1,4 @@
-import { blackTextStyle } from 'utils/constants'
+import { textStyle } from 'utils/constants'
 import Timeline from './timeline'
 import { useEffect, useState } from 'react'
 import Button from 'components/button'
@@ -9,9 +9,9 @@ export default function Background() {
   useEffect(() => {}, [type]);
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 bg-white p-hor sm:p-hor-sm">
+    <div className="flex flex-col md:grid md:grid-cols-2 p-hor sm:p-hor-sm">
       <div>
-        <h1 className={blackTextStyle}>BACKGROUND</h1>
+        <h1 className={textStyle}>BACKGROUND</h1>
         <div className="flex flex-row">
           <Button
             value="ALL"

@@ -1,2 +1,2 @@
-export const whiteTextStyle = 'text-bold text-white text-5xl'
-export const blackTextStyle = 'text-bold text-black text-5xl'
+export const highlightTextStyle = 'text-bold text-primary text-5xl'
+export const textStyle = 'text-bold text-black text-5xl'

@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "João Paulo Moraes",
-    "email": "joaopaulomoraes@outlook.com",
-    "url": "https://github.com/joaopaulomoraes"
+    "name": "AlineAyumi Fukuhara",
+    "email": "alineayumi.dev@gmail.com",
+    "url": "https://github.com/alineayumi"
   },
   "bugs": {
-    "url": "https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate/issues",
-    "email": "joaopaulomoraes@outlook.com"
+    "url": "https://github.com/alineayumi/portfolio/issues",
+    "email": "alineayumi.dev@gmail.com"
   },
   "scripts": {
     "dev": "vite --host",
