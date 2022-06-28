@@ -1,12 +1,15 @@
-import React from 'react'
+import ThemeSwitcher from './theme-switcher'
 
 export default function Footer() {
   return (
     <footer className="w-full h-[100px] bg-primary md:h-[30px]">
       <div className="py-3 px-4 bg-primary md:flex md:justify-between md:items-center">
-        <span className="text-sm text-gray-300 sm:text-center">
-          © 2022 Aline Ayumi. All Rights Reserved.
-        </span>
+        <div className="flex flex-row justify-between  md:w-9/12 ">
+          <span className="text-sm text-gray-300 sm:text-center">
+            © 2022 Aline Ayumi. All Rights Reserved.
+          </span>
+          <ThemeSwitcher />
+        </div>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
           <a
             href="https://www.instagram.com/alineayumi/"

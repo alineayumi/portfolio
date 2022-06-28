@@ -1,4 +1,4 @@
-import TimelineItem from './timeline_item'
+import TimelineItem from './timeline-item'
 
 interface TimelineProps {
   type: string
@@ -8,7 +8,7 @@ export default function Timeline({ type }: TimelineProps) {
   return (
     <div>
       <ol className="relative border-l border-gray-700">
-        {experiences.map((exp) => {
+        {experiences.map((exp, index) => {
           if (exp.type === type || type == 'all') {
             return (
               <TimelineItem
@@ -16,6 +16,7 @@ export default function Timeline({ type }: TimelineProps) {
                 description={exp.description}
                 date={exp.date}
                 place={exp.place === null ? undefined : exp.place}
+                key={index}
               />
             )
           }
@@ -37,14 +38,14 @@ const experiences = [
     title: 'Mobile Developer',
     description: 'Kenlo',
     date: 'July 2021 - January 2022',
-    place: null,
+    place: 'Campinas SP - Brasil',
     type: 'work'
   },
   {
     title: 'Full-stack Developer Intern',
     description: 'Aion Growth Solution',
     date: 'March 2021 - July 2021',
-    place: 'San Francisco CA - United States',
+    place: 'Campinas SP - Brasil',
     type: 'work'
   },
   {

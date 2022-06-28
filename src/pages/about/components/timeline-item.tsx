@@ -9,7 +9,7 @@ export default function TimelineItem({
   date,
   title,
   description,
-  place = 'São Paulo - Brasil'
+  place = 'São Paulo SP - Brasil'
 }: TimelineProps) {
   return (
     <li className="mb-10 ml-4">

@@ -12,8 +12,10 @@ export default function Nav() {
   const dropdownRef = useRef(null)
 
   // logic for dropdown menu (close the dropdown when user clicks outside of it)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function useOutsideAlerter(ref: any) {
     useEffect(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       function handleClickOutside(event: any) {
         if (ref.current && !ref.current.contains(event.target)) {
           setMenu(false)
@@ -96,6 +98,7 @@ export default function Nav() {
           >
             <li>contact</li>
           </NavLink>
+          <div className="flex justify-center"></div>
         </ul>
       </div>
       <div className="hidden w-auto md:block md:w-auto">
