@@ -1,10 +1,10 @@
-import React  from 'react';
-import { Outlet } from "react-router-dom";
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
   return (
-    <div className="mx-auto pt-[60px] min-h-[90%] md:min-h-[95%] box-border bg-surface">
+    <div className="box-border pt-[60px] mx-auto min-h-[90%] bg-surface md:min-h-[95%]">
       <Outlet />
     </div>
-  );
+  )
 }

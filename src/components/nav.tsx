@@ -28,13 +28,13 @@ export default function Nav() {
   useOutsideAlerter(dropdownRef)
 
   return (
-    <nav className="z-10 flex flex-row fixed w-full top-0 justify-between items-center px-3 sm:px-4 py-2.5 bg-primary h-[60px]">
+    <nav className="flex fixed top-0 z-10 flex-row justify-between items-center py-2.5 px-3 w-full h-[60px] bg-primary sm:px-4">
       <NavLink to="/" className="flex items-center">
         <p className="font-mono font-bold ">Aline Ayumi</p>
       </NavLink>
       <button
         onClick={() => setMenu(!showMenu)}
-        className="md:hidden text-white bg-primary-100 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+        className="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white hover:bg-gray-800 rounded-lg focus:outline-none focus:ring-4 focus:ring-gray-300 md:hidden bg-primary-100"
       >
         <svg
           className="w-6 h-6"
@@ -67,7 +67,7 @@ export default function Nav() {
           showMenu ? 'block' : 'hidden'
         } rounded shadow w-44 bg-primary`}
       >
-        <ul className="flex flex-col items-start my-4 space-y-4 px-2">
+        <ul className="flex flex-col items-start px-2 my-4 space-y-4">
           <NavLink
             to=""
             onClick={() => setMenu(false)}
@@ -99,7 +99,7 @@ export default function Nav() {
         </ul>
       </div>
       <div className="hidden w-auto md:block md:w-auto">
-        <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+        <ul className="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 md:text-sm md:font-medium">
           <li>
             <NavLink
               to=""

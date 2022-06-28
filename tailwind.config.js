@@ -21,11 +21,11 @@ module.exports = {
         tertiaryDark: '#EFBF78',
         errorDark: '#F2B8B4',
         backgroundDark: '#201A1A',
-        surfaceDark: '#524342',
+        surfaceDark: '#524342'
       },
       padding: {
-        'hor': '32px',
-        'hor-sm': '36px'
+        hor: '32px',
+        horSm: '36px'
       }
     }
   },

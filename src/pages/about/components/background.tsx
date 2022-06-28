@@ -1,15 +1,13 @@
 import { textStyle } from 'utils/constants'
 import Timeline from './timeline'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Button from 'components/button'
 
 export default function Background() {
   const [type, setType] = useState('all')
 
-  useEffect(() => {}, [type]);
-
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 p-hor sm:p-hor-sm">
+    <div className="flex flex-col p-hor sm:p-horSm md:grid md:grid-cols-2">
       <div>
         <h1 className={textStyle}>BACKGROUND</h1>
         <div className="flex flex-row">
