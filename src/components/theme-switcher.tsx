@@ -6,7 +6,9 @@ export default function ThemeSwitcher() {
   return (
     <div className="flex flex-row justify-center h-6">
       <button
-        className="content-center pr-2 text-white"
+        className={`content-center pr-2 ${
+          theme.darkMode ? 'text-secondaryDark' : 'text-secondary'
+        }`}
         onClick={theme.setDarkMode}
       >
         {theme.darkMode ? <BsMoonFill /> : <BsMoon />}
@@ -25,7 +27,12 @@ export default function ThemeSwitcher() {
         />
         <div className="peer after:absolute after:top-[2px] after:left-[2px] w-11 after:w-5 h-6 after:h-5 after:content-[''] after:bg-white bg-gray-700 peer-checked:bg-gray-400 rounded-full after:rounded-full  after:transition-all peer-checked:after:translate-x-full"></div>
       </label>
-      <button className="pl-2 text-white" onClick={theme.setLightMode}>
+      <button
+        className={`pl-2 ${
+          theme.darkMode ? 'text-secondaryDark' : 'text-secondary'
+        }`}
+        onClick={theme.setLightMode}
+      >
         {theme.darkMode ? <BsSun /> : <BsSunFill />}
       </button>
     </div>

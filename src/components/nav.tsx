@@ -1,15 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useTheme } from 'utils/theme'
 
 export default function Nav() {
-  const unselectedNavLinkStyle =
-    'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent text-white md:p-0 hover:underline'
-  const selectedNavLinkStyle =
-    'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent text-black md:p-0'
-  const unselectedDropdown = 'text-white w-full hover:underline'
-  const selectedDropdown = 'text-secondary w-full'
+  const unselectedNavLinkStyle = 'block py-2 pr-4 pl-3 md:p-0 hover:underline'
+  const selectedNavLinkStyle = 'block py-2 pr-4 pl-3 md:p-0 font-bold text-lg'
+  const unselectedDropdown = 'w-full hover:underline'
+  const selectedDropdown = ' w-full font-bold'
   const [showMenu, setMenu] = useState(false)
   const dropdownRef = useRef(null)
+  const theme = useTheme()
 
   // logic for dropdown menu (close the dropdown when user clicks outside of it)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,13 +30,21 @@ export default function Nav() {
   useOutsideAlerter(dropdownRef)
 
   return (
-    <nav className="flex fixed top-0 z-10 flex-row justify-between items-center py-2.5 px-3 w-full h-[60px] bg-primary sm:px-4">
+    <nav
+      className={`flex fixed top-0 z-10 flex-row justify-between items-center py-2.5 px-3 w-full h-[60px] ${
+        theme.darkMode
+          ? 'bg-surfaceDark text-secondaryDark'
+          : 'bg-surface text-secondary'
+      } sm:px-4`}
+    >
       <NavLink to="/" className="flex items-center">
-        <p className="font-mono font-bold ">Aline Ayumi</p>
+        <p className={`font-mono font-bold`}>Aline Ayumi</p>
       </NavLink>
       <button
         onClick={() => setMenu(!showMenu)}
-        className="inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white hover:bg-gray-800 rounded-lg focus:outline-none focus:ring-4 focus:ring-gray-300 md:hidden bg-primary-100"
+        className={`inline-flex items-center py-2.5 px-4 text-sm font-medium text-center rounded-lg focus:outline-none md:hidden ${
+          theme.darkMode ? 'focus:bg-black' : 'focus:bg-white'
+        }`}
       >
         <svg
           className="w-6 h-6"
@@ -67,7 +75,9 @@ export default function Nav() {
         ref={dropdownRef}
         className={`absolute z-10 top-[70px] right-[10px] ${
           showMenu ? 'block' : 'hidden'
-        } rounded shadow w-44 bg-primary`}
+        } rounded shadow w-44 ${
+          theme.darkMode ? 'bg-surfaceDark' : 'bg-surface'
+        }`}
       >
         <ul className="flex flex-col items-start px-2 my-4 space-y-4">
           <NavLink

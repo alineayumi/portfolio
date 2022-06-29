@@ -1,3 +1,4 @@
+import { useTheme } from 'utils/theme'
 import TimelineItem from './timeline-item'
 
 interface TimelineProps {
@@ -5,9 +6,14 @@ interface TimelineProps {
 }
 
 export default function Timeline({ type }: TimelineProps) {
+  const theme = useTheme()
   return (
     <div>
-      <ol className="relative border-l border-gray-700">
+      <ol
+        className={`relative border-l ${
+          theme.darkMode ? 'border-secondaryDark' : 'border-secondary'
+        }`}
+      >
         {experiences.map((exp, index) => {
           if (exp.type === type || type == 'all') {
             return (
