@@ -13,7 +13,7 @@ const DarkModeContext = React.createContext<ThemeInterface>({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const DarkModeProvider = ({ children }: any) => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
   }

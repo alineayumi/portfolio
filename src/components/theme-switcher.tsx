@@ -23,6 +23,7 @@ export default function ThemeSwitcher() {
           id="default-toggle"
           className="peer sr-only"
           checked={!theme.darkMode}
+          readOnly
           onClick={theme.toggleDarkMode}
         />
         <div className="peer after:absolute after:top-[2px] after:left-[2px] w-11 after:w-5 h-6 after:h-5 after:content-[''] after:bg-white bg-gray-700 peer-checked:bg-gray-400 rounded-full after:rounded-full  after:transition-all peer-checked:after:translate-x-full"></div>

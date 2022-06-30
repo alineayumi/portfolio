@@ -8,6 +8,7 @@ import Error from './pages/error/error'
 import Footer from 'components/footer'
 import Portfolio from './pages/portfolio/portfolio'
 import { DarkModeProvider } from 'utils/theme'
+import Messages from 'pages/messages/messages'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="portfolio" element={<Portfolio />} />
+            <Route path="messages" element={<Messages />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>

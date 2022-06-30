@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'utils/theme'
+import ThemeSwitcher from './theme-switcher'
 
 export default function Nav() {
   const unselectedNavLinkStyle = 'block py-2 pr-4 pl-3 md:p-0 hover:underline'
@@ -37,9 +38,12 @@ export default function Nav() {
           : 'bg-surface text-secondary'
       } sm:px-4`}
     >
-      <NavLink to="/" className="flex items-center">
-        <p className={`font-mono font-bold`}>Aline Ayumi</p>
-      </NavLink>
+      <div className="flex flex-row justify-between mr-8 w-full">
+        <NavLink to="/" className="flex items-center">
+          <p className={`font-mono font-bold`}>Aline Ayumi</p>
+        </NavLink>
+        <ThemeSwitcher />
+      </div>
       <button
         onClick={() => setMenu(!showMenu)}
         className={`inline-flex items-center py-2.5 px-4 text-sm font-medium text-center rounded-lg focus:outline-none md:hidden ${
@@ -108,6 +112,16 @@ export default function Nav() {
           >
             <li>contact</li>
           </NavLink>
+          <NavLink
+            to="messages"
+            onClick={() => setMenu(false)}
+            className={({ isActive }) =>
+              isActive ? selectedDropdown : unselectedDropdown
+            }
+            aria-current="page"
+          >
+            <li>messages</li>
+          </NavLink>
           <div className="flex justify-center"></div>
         </ul>
       </div>
@@ -142,6 +156,16 @@ export default function Nav() {
               }
             >
               contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="messages"
+              className={({ isActive }) =>
+                isActive ? selectedNavLinkStyle : unselectedNavLinkStyle
+              }
+            >
+              messages
             </NavLink>
           </li>
         </ul>

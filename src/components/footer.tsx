@@ -1,5 +1,4 @@
 import { useTheme } from 'utils/theme'
-import ThemeSwitcher from './theme-switcher'
 
 export default function Footer() {
   const theme = useTheme()
@@ -20,12 +19,9 @@ export default function Footer() {
           theme.darkMode ? 'bg-surfaceDark' : 'bg-surface'
         }`}
       >
-        <div className="flex flex-row justify-between  md:w-9/12 ">
-          <span className="text-sm sm:text-center">
-            © 2022 Aline Ayumi. All Rights Reserved.
-          </span>
-          <ThemeSwitcher />
-        </div>
+        <span className="text-sm sm:text-center">
+          © 2022 Aline Ayumi. All Rights Reserved.
+        </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
           <a
             href="https://www.instagram.com/alineayumi/"
