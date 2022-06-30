@@ -8,15 +8,6 @@ import { getFirestore } from 'firebase/firestore/lite'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-// import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
-// dotenv.config()
-// import express from 'express'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// require('dotenv').config()
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-console.log(import.meta.env) // remove this after you've confirmed it working
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -26,7 +17,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID,
   measurementId: import.meta.env.VITE_MEASUREMENT_ID
 }
-console.log(firebaseConfig)
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
