@@ -38,6 +38,7 @@ const AuthContext = createContext<AuthInterface>({
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
 
   const signup = ({
     email: email = '',
@@ -48,14 +49,15 @@ const AuthProvider = ({ children }: Props): JSX.Element => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      return setCurrentUser(user)
+      setCurrentUser(user)
+      setLoading(false)
     })
     return unsubscribe
   }, [])
 
   return (
     <AuthContext.Provider value={{ currentUser: currentUser, signup: signup }}>
-      {children}
+      {!loading && children}
     </AuthContext.Provider>
   )
 }
