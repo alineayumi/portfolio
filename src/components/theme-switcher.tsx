@@ -1,4 +1,4 @@
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 import { BsMoonFill, BsMoon, BsSunFill, BsSun } from 'react-icons/bs'
 
 export default function ThemeSwitcher() {

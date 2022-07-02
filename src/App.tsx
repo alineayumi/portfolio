@@ -7,29 +7,32 @@ import Contact from './pages/contact/contact'
 import Error from './pages/error/error'
 import Footer from 'components/footer'
 import Portfolio from './pages/portfolio/portfolio'
-import { DarkModeProvider } from 'utils/theme'
+import { ThemeProvider } from 'contexts/theme'
 import Messages from 'pages/messages/messages'
 import Signup from 'pages/auth/signup'
 import Login from 'pages/auth/login'
+import { AuthProvider } from 'contexts/auth'
 
 export default function App() {
   return (
-    <DarkModeProvider>
-      <div className="w-screen h-screen">
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="portfolio" element={<Portfolio />} />
-            <Route path="messages" element={<Messages />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="login" element={<Login />} />
-            <Route path="*" element={<Error />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </div>
-    </DarkModeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <div className="w-screen h-screen">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="portfolio" element={<Portfolio />} />
+              <Route path="messages" element={<Messages />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="login" element={<Login />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </AuthProvider>
   )
 }

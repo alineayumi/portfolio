@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 import ThemeSwitcher from './theme-switcher'
 
 export default function Nav() {

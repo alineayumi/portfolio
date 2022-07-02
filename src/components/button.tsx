@@ -4,6 +4,8 @@ interface ButtonProps {
   isDark?: boolean
   isHighlight?: boolean
   isExpanded?: boolean
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
 
 const buttonDarkStyle =
@@ -20,11 +22,14 @@ export default function Button({
   onClick,
   isDark = true,
   isHighlight = false,
-  isExpanded = false
+  isExpanded = false,
+  disabled = false,
+  type = 'button'
 }: ButtonProps) {
   return (
     <button
-      type="button"
+      type={type !== null ? `${type}` : 'button'}
+      disabled={disabled}
       className={`${
         isDark
           ? isHighlight
@@ -33,7 +38,7 @@ export default function Button({
           : isHighlight
           ? buttonLightHighLightStyle
           : buttonLightStyle
-      } ${isExpanded ? 'w-full' : ''}`}
+      } ${isExpanded ? 'w-full' : ''} `}
       onClick={onClick}
     >
       <p className="whitespace-nowrap">{value}</p>

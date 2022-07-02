@@ -5,7 +5,7 @@ import {
   darkTextStyle,
   darkHighlighTextStyle
 } from 'utils/constants'
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 import aline from '../../../assets/aline.png'
 
 export default function Greetings() {

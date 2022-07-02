@@ -2,7 +2,7 @@ import { darkTextStyle, textStyle } from 'utils/constants'
 import Timeline from './timeline'
 import { useState } from 'react'
 import Button from 'components/button'
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 
 export default function Background() {
   const [type, setType] = useState('all')

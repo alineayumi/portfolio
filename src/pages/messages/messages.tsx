@@ -1,6 +1,6 @@
 import { addDoc, collection, Firestore, getDocs } from 'firebase/firestore/lite'
 import { useEffect, useState } from 'react'
-import { db } from 'services/firebse_config'
+import { db } from 'services/firebase_config'
 
 // Get a list of cities from your database
 async function getMessages(db: Firestore) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 
 export default function Layout() {
   const theme = useTheme()

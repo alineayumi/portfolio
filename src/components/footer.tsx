@@ -1,4 +1,4 @@
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 
 export default function Footer() {
   const theme = useTheme()

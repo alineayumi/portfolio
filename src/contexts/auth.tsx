@@ -1,0 +1,65 @@
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  User,
+  UserCredential
+} from 'firebase/auth'
+
+import React, {
+  useContext,
+  createContext,
+  useState,
+  ReactNode,
+  useEffect
+} from 'react'
+
+import { auth } from '../services/firebase_config'
+
+interface Props {
+  children?: ReactNode
+}
+
+interface UserCredentials {
+  email?: string
+  password?: string
+}
+
+interface AuthInterface {
+  currentUser?: User | null
+  signup: ({
+    email,
+    password
+  }: UserCredentials) => Promise<UserCredential> | void
+}
+
+const AuthContext = createContext<AuthInterface>({
+  signup: () => undefined
+})
+
+const AuthProvider = ({ children }: Props): JSX.Element => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null)
+
+  const signup = ({
+    email: email = '',
+    password: password = ''
+  }: UserCredentials) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      return setCurrentUser(user)
+    })
+    return unsubscribe
+  }, [])
+
+  return (
+    <AuthContext.Provider value={{ currentUser: currentUser, signup: signup }}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+const useAuth = () => useContext(AuthContext)
+
+export { AuthProvider, useAuth }

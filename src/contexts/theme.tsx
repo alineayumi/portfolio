@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { ReactNode, useContext, useState } from 'react'
 
 interface ThemeInterface {
   darkMode: boolean
@@ -7,12 +7,16 @@ interface ThemeInterface {
   setLightMode?: () => void
 }
 
-const DarkModeContext = React.createContext<ThemeInterface>({
+interface Props {
+  children?: ReactNode
+}
+
+const ThemeContext = React.createContext<ThemeInterface>({
   darkMode: false
 })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const DarkModeProvider = ({ children }: any) => {
+const ThemeProvider = ({ children }: Props) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
@@ -21,7 +25,7 @@ const DarkModeProvider = ({ children }: any) => {
   const setLightMode = () => setIsDarkMode(false)
 
   return (
-    <DarkModeContext.Provider
+    <ThemeContext.Provider
       value={{
         darkMode: isDarkMode,
         toggleDarkMode: toggleDarkMode,
@@ -30,10 +34,10 @@ const DarkModeProvider = ({ children }: any) => {
       }}
     >
       {children}
-    </DarkModeContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 
-const useTheme = () => useContext(DarkModeContext)
+const useTheme = () => useContext(ThemeContext)
 
-export { DarkModeContext, DarkModeProvider, useTheme }
+export { ThemeProvider, useTheme }

@@ -1,4 +1,4 @@
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 
 interface TimelineProps {
   date: string

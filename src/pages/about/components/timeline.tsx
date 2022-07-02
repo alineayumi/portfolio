@@ -1,4 +1,4 @@
-import { useTheme } from 'utils/theme'
+import { useTheme } from 'contexts/theme'
 import TimelineItem from './timeline-item'
 
 interface TimelineProps {
