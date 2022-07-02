@@ -3,6 +3,7 @@ import ErrorAlert from 'components/error_alert'
 import { useAuth } from 'contexts/auth'
 import { useTheme } from 'contexts/theme'
 import React, { FormEvent, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import welcome from '../../assets/welcome.svg'
 
 const inputStyle =
@@ -106,7 +107,9 @@ export default function SignUp() {
                 ALREADY SIGNED UP ?
               </p>
             </div>
-            <Button value="LOGIN" onClick={() => null} isExpanded={true} />
+            <NavLink to="/login">
+              <Button value="LOGIN" onClick={() => null} isExpanded={true} />
+            </NavLink>
           </form>
         </div>
       </div>
