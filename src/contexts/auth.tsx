@@ -1,5 +1,7 @@
 import {
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
   onAuthStateChanged,
   User,
   UserCredential
@@ -30,10 +32,17 @@ interface AuthInterface {
     email,
     password
   }: UserCredentials) => Promise<UserCredential> | void
+  login: ({
+    email,
+    password
+  }: UserCredentials) => Promise<UserCredential> | void
+  logout: () => Promise<void> | void
 }
 
 const AuthContext = createContext<AuthInterface>({
-  signup: () => undefined
+  signup: () => undefined,
+  login: () => undefined,
+  logout: () => undefined
 })
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
@@ -47,6 +56,17 @@ const AuthProvider = ({ children }: Props): JSX.Element => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
+  const login = ({
+    email: email = '',
+    password: password = ''
+  }: UserCredentials) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
+  const logout = () => {
+    return signOut(auth)
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user)
@@ -56,7 +76,14 @@ const AuthProvider = ({ children }: Props): JSX.Element => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ currentUser: currentUser, signup: signup }}>
+    <AuthContext.Provider
+      value={{
+        currentUser: currentUser,
+        signup: signup,
+        login: login,
+        logout: logout
+      }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   )
