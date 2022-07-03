@@ -81,7 +81,6 @@ export default function SignUp() {
                 required
               />
             </div>
-
             {/* password confirmation */}
             <div className="mb-6">
               <input
@@ -94,7 +93,6 @@ export default function SignUp() {
                 required
               />
             </div>
-
             <Button
               value="SIGN UP"
               disabled={loading}

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 
 import Layout from './components/layout'
 import Nav from './components/nav'
@@ -11,7 +11,7 @@ import { ThemeProvider } from 'contexts/theme'
 import Messages from 'pages/messages/messages'
 import Signup from 'pages/auth/signup'
 import Login from 'pages/auth/login'
-import { AuthProvider } from 'contexts/auth'
+import { AuthProvider, useAuth } from 'contexts/auth'
 
 export default function App() {
   return (
@@ -22,12 +22,26 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="" element={<About />} />
-              <Route path="contact" element={<Contact />} />
+              <Route
+                path="contact"
+                element={
+                  <ProtectedRoute>
+                    <Contact />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="portfolio" element={<Portfolio />} />
-              <Route path="messages" element={<Messages />} />
+              <Route
+                path="messages"
+                element={
+                  <ProtectedRoute>
+                    <Messages />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="*" element={<Error />} />
               <Route path="signup" element={<Signup />} />
               <Route path="login" element={<Login />} />
-              <Route path="*" element={<Error />} />
             </Route>
           </Routes>
           <Footer />
@@ -35,4 +49,17 @@ export default function App() {
       </ThemeProvider>
     </AuthProvider>
   )
+}
+
+const ProtectedRoute = ({
+  children
+}: {
+  children: JSX.Element
+}): JSX.Element => {
+  const auth = useAuth()
+
+  if (auth.currentUser !== null) {
+    return children ? children : <Outlet />
+  }
+  return <Navigate to="/signup" />
 }

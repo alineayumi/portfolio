@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'contexts/theme'
 import ThemeSwitcher from './theme-switcher'
+import { useAuth } from 'contexts/auth'
 
 export default function Nav() {
   const unselectedNavLinkStyle = 'block py-2 pr-4 pl-3 md:p-0 hover:underline'
@@ -11,6 +12,7 @@ export default function Nav() {
   const [showMenu, setMenu] = useState(false)
   const dropdownRef = useRef(null)
   const theme = useTheme()
+  const auth = useAuth()
 
   // logic for dropdown menu (close the dropdown when user clicks outside of it)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,7 +41,14 @@ export default function Nav() {
       } sm:px-4`}
     >
       <div className="flex flex-row justify-between mr-8 w-full">
-        <NavLink to="/" className="flex items-center">
+        {/* <NavLink to="/" className="flex items-center">
+          <p className={`font-mono font-bold`}>Aline Ayumi</p>
+        </NavLink> */}
+        <NavLink
+          to="/"
+          className="flex items-center"
+          onClick={() => auth.logout()}
+        >
           <p className={`font-mono font-bold`}>Aline Ayumi</p>
         </NavLink>
         <ThemeSwitcher />
