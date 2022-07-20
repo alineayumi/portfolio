@@ -12,12 +12,13 @@ import Messages from 'pages/messages/messages'
 import Signup from 'pages/auth/signup'
 import Login from 'pages/auth/login'
 import { AuthProvider, useAuth } from 'contexts/auth'
+import Waves from 'pages/waves/waves'
 
 export default function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <div className="w-screen h-screen">
+        <div className="h-screen w-screen">
           <Nav />
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -39,6 +40,7 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="waves" element={<Waves />} />
               <Route path="*" element={<Error />} />
               <Route path="signup" element={<Signup />} />
               <Route path="login" element={<Login />} />

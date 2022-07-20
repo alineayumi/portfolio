@@ -8,27 +8,24 @@ export default function Footer() {
     : 'hover:text-primary'
   return (
     <footer
-      className={`w-full h-[100px] ${
+      className={`h-[100px] w-full ${
         theme.darkMode
           ? 'bg-surfaceDark text-secondaryDark'
           : 'bg-surface text-secondary'
       } md:h-[30px]`}
     >
       <div
-        className={`py-3 px-4 md:flex md:justify-between md:items-center ${
+        className={`py-3 px-4 md:flex md:items-center md:justify-between ${
           theme.darkMode ? 'bg-surfaceDark' : 'bg-surface'
         }`}
       >
         <span className="text-sm sm:text-center">
           © 2022 Aline Ayumi. All Rights Reserved.
         </span>
-        <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
-          <a
-            href="https://www.instagram.com/alineayumi/"
-            className={socialIconsStyle}
-          >
+        <div className="mt-4 flex space-x-6 sm:justify-center md:mt-0">
+          <a href="https://www.instagram.com/" className={socialIconsStyle}>
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -45,7 +42,7 @@ export default function Footer() {
             className={socialIconsStyle}
           >
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 512 512"
               aria-hidden="true"
@@ -56,7 +53,7 @@ export default function Footer() {
 
           <a href="https://github.com/alineayumi" className={socialIconsStyle}>
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -73,7 +70,7 @@ export default function Footer() {
             className={socialIconsStyle}
           >
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 8 6"
               aria-hidden="true"

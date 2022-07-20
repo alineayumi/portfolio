@@ -42,8 +42,8 @@ export default function SignUp() {
   }
 
   return (
-    <section className="w-full h-full">
-      <div className="flex flex-col justify-center items-center p-hor sm:p-horSm lg:grid lg:grid-cols-9">
+    <section className="h-full w-full">
+      <div className="p-hor sm:p-horSm flex flex-col items-center justify-center lg:grid lg:grid-cols-9">
         <div className="flex flex-col justify-center md:w-1/2 lg:col-span-5 lg:w-full">
           <img src={welcome} alt="Phone Image" className=" w-full" />
         </div>
@@ -55,7 +55,7 @@ export default function SignUp() {
             isDark={theme.darkMode}
           />
         )}
-        <div className="flex flex-col justify-center  px-4 w-full lg:col-span-4">
+        <div className="flex w-full flex-col  justify-center px-4 lg:col-span-4">
           <form action="" onSubmit={handleSubmit}>
             {/* email input */}
             <div className="mb-6">
@@ -100,8 +100,8 @@ export default function SignUp() {
               isExpanded={true}
               type="submit"
             />
-            <div className="flex before:flex-1 after:flex-1 items-center my-4 before:mt-0.5 after:mt-0.5 before:border-t after:border-t before:border-gray-300 after:border-gray-300">
-              <p className="mx-4 mb-0 font-semibold text-center text-primaryDark">
+            <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
+              <p className="text-primaryDark mx-4 mb-0 text-center font-semibold">
                 ALREADY SIGNED UP ?
               </p>
             </div>

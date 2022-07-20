@@ -9,7 +9,7 @@ export default function Background() {
   const theme = useTheme()
 
   return (
-    <div className="flex flex-col p-hor sm:p-horSm md:grid md:grid-cols-2">
+    <div className="p-hor sm:p-horSm flex flex-col md:grid md:grid-cols-2">
       <div>
         <h1 className={theme.darkMode ? darkTextStyle : textStyle}>
           BACKGROUND

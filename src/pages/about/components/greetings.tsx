@@ -16,7 +16,7 @@ export default function Greetings() {
     : highlightTextStyle
 
   return (
-    <div className="flex flex-col p-hor sm:p-horSm md:grid md:grid-cols-9">
+    <div className="p-hor sm:p-horSm flex flex-col md:grid md:grid-cols-9">
       <div className="flex flex-col justify-start md:col-span-4">
         <div className="md:mr-10">
           <h1 className={_textStyle}>Hi, my name</h1>
@@ -34,7 +34,7 @@ export default function Greetings() {
           isDark={theme.darkMode}
         />
       </div>
-      <div className="flex flex-col col-span-5 justify-end w-full md:aspect-square">
+      <div className="col-span-5 flex w-full flex-col justify-end md:aspect-square">
         <img className="rounded-xl" src={aline} />
       </div>
     </div>

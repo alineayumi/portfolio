@@ -18,7 +18,7 @@ export default function TimelineItem({
   return (
     <li className="mb-10 ml-4">
       <div
-        className={`absolute -left-1.5 mt-1.5 w-3 h-3 ${
+        className={`absolute -left-1.5 mt-1.5 h-3 w-3 ${
           theme.darkMode
             ? 'bg-secondaryDark border-secondaryDark'
             : 'bg-secondary border-secondary'

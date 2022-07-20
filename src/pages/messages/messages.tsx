@@ -32,6 +32,7 @@ export default function Messages() {
     if (fetched === false) {
       getFetch()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const MakeMessage = async () => {
@@ -49,13 +50,13 @@ export default function Messages() {
 
   return (
     <div>
-      <div className="flex items-center min-h-screen text-lg bg-background">
-        <form action="" className="p-10 mx-auto rounded md:w-2/3 lg:w-1/2">
+      <div className="bg-background flex min-h-screen items-center text-lg">
+        <form action="" className="mx-auto rounded p-10 md:w-2/3 lg:w-1/2">
           <div className="shadow">
-            <div className="flex items-center rounded-t-lg border border-surface">
+            <div className="border-surface flex items-center rounded-t-lg border">
               <label
                 htmlFor="from"
-                className="p-4 mr-8 w-20 text-right text-primary"
+                className="text-primary mr-8 w-20 p-4 text-right"
               >
                 From
               </label>
@@ -64,15 +65,15 @@ export default function Messages() {
                 name="from"
                 id="from"
                 placeholder="Put in your name"
-                className="overflow-hidden flex-1 p-4 pl-0 text-primary  placeholder:text-secondary text-ellipsis bg-transparent outline-none"
+                className="text-primary placeholder:text-secondary flex-1 overflow-hidden text-ellipsis  bg-transparent p-4 pl-0 outline-none"
                 value={from}
                 onChange={(e) => setFrom(e.target.value)}
               />
             </div>
-            <div className="flex items-center mb-10 rounded-b-lg border border-surface">
+            <div className="border-surface mb-10 flex items-center rounded-b-lg border">
               <label
                 htmlFor="message"
-                className="p-4 mr-8 w-20 text-right text-primary"
+                className="text-primary mr-8 w-20 p-4 text-right"
               >
                 Message
               </label>
@@ -83,12 +84,12 @@ export default function Messages() {
                 placeholder="Write a message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="overflow-hidden flex-1 p-4 pl-0 text-primary placeholder:text-secondary text-ellipsis bg-transparent outline-none"
+                className="text-primary placeholder:text-secondary flex-1 overflow-hidden text-ellipsis bg-transparent p-4 pl-0 outline-none"
               />
             </div>
           </div>
           <button
-            className="block py-4 w-full font-bold text-white bg-tertiary rounded shadow"
+            className="bg-tertiary block w-full rounded py-4 font-bold text-white shadow"
             onClick={() => MakeMessage()}
           >
             Submit
@@ -96,10 +97,10 @@ export default function Messages() {
         </form>
       </div>
 
-      <p className="text-xl  text-surface">Messages</p>
+      <p className="text-surface  text-xl">Messages</p>
       {messages.map((msg: any, index) => {
         return (
-          <div key={index} className="flex flex-row text-surface">
+          <div key={index} className="text-surface flex flex-row">
             <p className="mr-4">{msg?.message}</p>
             <p>from: {msg?.from}</p>
           </div>

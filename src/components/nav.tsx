@@ -34,13 +34,13 @@ export default function Nav() {
 
   return (
     <nav
-      className={`flex fixed top-0 z-10 flex-row justify-between items-center py-2.5 px-3 w-full h-[60px] ${
+      className={`fixed top-0 z-10 flex h-[60px] w-full flex-row items-center justify-between py-2.5 px-3 ${
         theme.darkMode
           ? 'bg-surfaceDark text-secondaryDark'
           : 'bg-surface text-secondary'
       } sm:px-4`}
     >
-      <div className="flex flex-row justify-between mr-8 w-full">
+      <div className="mr-8 flex w-full flex-row justify-between">
         {/* <NavLink to="/" className="flex items-center">
           <p className={`font-mono font-bold`}>Aline Ayumi</p>
         </NavLink> */}
@@ -55,12 +55,12 @@ export default function Nav() {
       </div>
       <button
         onClick={() => setMenu(!showMenu)}
-        className={`inline-flex items-center py-2.5 px-4 text-sm font-medium text-center rounded-lg focus:outline-none md:hidden ${
+        className={`inline-flex items-center rounded-lg py-2.5 px-4 text-center text-sm font-medium focus:outline-none md:hidden ${
           theme.darkMode ? 'focus:bg-black' : 'focus:bg-white'
         }`}
       >
         <svg
-          className="w-6 h-6"
+          className="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ export default function Nav() {
           ></path>
         </svg>
         <svg
-          className="hidden w-6 h-6"
+          className="hidden h-6 w-6"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -86,13 +86,13 @@ export default function Nav() {
       </button>
       <div
         ref={dropdownRef}
-        className={`absolute z-10 top-[70px] right-[10px] ${
+        className={`absolute top-[70px] right-[10px] z-10 ${
           showMenu ? 'block' : 'hidden'
-        } rounded shadow w-44 ${
+        } w-44 rounded shadow ${
           theme.darkMode ? 'bg-surfaceDark' : 'bg-surface'
         }`}
       >
-        <ul className="flex flex-col items-start px-2 my-4 space-y-4">
+        <ul className="my-4 flex flex-col items-start space-y-4 px-2">
           <NavLink
             to=""
             onClick={() => setMenu(false)}
@@ -122,6 +122,16 @@ export default function Nav() {
             <li>contact</li>
           </NavLink>
           <NavLink
+            to="waves"
+            onClick={() => setMenu(false)}
+            className={({ isActive }) =>
+              isActive ? selectedDropdown : unselectedDropdown
+            }
+            aria-current="page"
+          >
+            <li>waves</li>
+          </NavLink>
+          {/* <NavLink
             to="messages"
             onClick={() => setMenu(false)}
             className={({ isActive }) =>
@@ -130,12 +140,12 @@ export default function Nav() {
             aria-current="page"
           >
             <li>messages</li>
-          </NavLink>
+          </NavLink> */}
           <div className="flex justify-center"></div>
         </ul>
       </div>
       <div className="hidden w-auto md:block md:w-auto">
-        <ul className="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 md:text-sm md:font-medium">
+        <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
           <li>
             <NavLink
               to=""
@@ -168,13 +178,21 @@ export default function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink
+            {/* <NavLink
               to="messages"
               className={({ isActive }) =>
                 isActive ? selectedNavLinkStyle : unselectedNavLinkStyle
               }
             >
               messages
+            </NavLink> */}
+            <NavLink
+              to="waves"
+              className={({ isActive }) =>
+                isActive ? selectedNavLinkStyle : unselectedNavLinkStyle
+              }
+            >
+              waves
             </NavLink>
           </li>
         </ul>
